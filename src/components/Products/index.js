@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { CircularProgress, Box } from "@mui/material/";
+import { CircularProgress } from "@mui/material/";
 import { getProducts } from "../../Hooks/useGetProducts";
-import { CardProduct } from "../index";
+import { CardProduct, Category } from "../index";
 import "../../App.css";
 export default function Index() {
   const [products, setProducts] = useState([]);
@@ -27,7 +27,10 @@ export default function Index() {
         {isLoading ? (
           <CircularProgress sx={{ display: "flex", marginTop: 3 }} />
         ) : (
-          <CardProduct products={products} />
+          <>
+            <Category />
+            <CardProduct products={products} />
+          </>
         )}
       </div>
     </div>

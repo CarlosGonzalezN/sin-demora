@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import { Menu, Pedido, Error, Register } from "./pages/index";
+import { Menu, Pedido, Error, Register, Initial } from "./pages/index";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Route path="/menu" element={<Menu />} />
       <Route path="/error" element={<Error />} />
       <Route path="/pedido" element={<Pedido />} />
-      <Route path="/*" element={<Menu />}></Route>
+      <Route path="/" element={<Initial />}></Route>
     </Routes>
   );
 }
