@@ -14,39 +14,46 @@ export default function Index() {
   useEffect(() => {
     loadOrdens();
   }, []);
+
   return (
     <>
       <Typography variant="h4" align="center">
         Detalle de pedidos
       </Typography>
-      {pedidos.map(({ $id, NickName, listaPedidosPersona }) => (
-        <div className="container">
-          <Card key={$id} className="card">
-            <Box>
-              <Typography>{NickName.toUpperCase()}</Typography>
-            </Box>
-            <CardContent>
-              {listaPedidosPersona.map((p) => (
-                <lu key={p.$id}>
-                  <li>{p.Descripcion}</li>
-                </lu>
-              ))}
-            </CardContent>
+      {pedidos.map(
+        ({ $id, NickName, listaPedidosPersona, precioTotalCliente }) => (
+          <div className="container">
+            <Card key={$id} className="card">
+              <Box>
+                <Typography>{NickName.toUpperCase()}</Typography>
+              </Box>
+              <CardContent>
+                {listaPedidosPersona.map((p) => (
+                  <>
+                    {" "}
+                    <lu key={p.$id}>
+                      <li>{p.Descripcion}</li>
+                    </lu>
+                  </>
+                ))}
+                <Typography>{precioTotalCliente}</Typography>
+              </CardContent>
 
-            {name.toLowerCase() == NickName.toLowerCase() ? (
-              <Button
-                onClick={() => {
-                  alert("pagado");
-                }}
-              >
-                Pagar mi cuenta
-              </Button>
-            ) : (
-              "-"
-            )}
-          </Card>
-        </div>
-      ))}
+              {name.toLowerCase() == NickName.toLowerCase() ? (
+                <Button
+                  onClick={() => {
+                    alert("pagado");
+                  }}
+                >
+                  Pagar mi cuenta
+                </Button>
+              ) : (
+                "-"
+              )}
+            </Card>
+          </div>
+        )
+      )}
     </>
   );
 }
