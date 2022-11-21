@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import {
   Card,
   Box,
@@ -13,15 +13,19 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { ModalProduct } from "../index";
 
 export default function Index({ products }) {
+  const ref = useRef();
   const data = products;
   const [openModal, setOpenModal] = useState(false);
-  const [id, setId] = useState(null);
-  const handleModal = () => {
-    setOpenModal(!openModal);
-    setId(data.id);
-    console.log(data.id);
-  };
+  const [selected, setSelected] = useState();
 
+  const handleOpen = (id) => {
+    setSelected(id);
+    setOpenModal(true);
+  };
+  const handleClose = () => {
+    setOpenModal(false);
+    setSelected([]);
+  };
   return (
     <>
       <>
@@ -46,7 +50,7 @@ export default function Index({ products }) {
                   ${data.Precio}
                 </Typography>
                 <CardActions>
-                  <Button size="small" onClick={handleModal}>
+                  <Button size="small" onClick={() => handleOpen(data.Id)}>
                     <AddShoppingCartIcon />
                   </Button>
                 </CardActions>
@@ -63,11 +67,11 @@ export default function Index({ products }) {
         ))}
         <Modal
           open={openModal}
-          onClose={handleModal}
+          onClose={handleClose}
           aria-labelledby="keep-mounted-modal-title"
           aria-describedby="keep-mounted-modal-description"
         >
-          <ModalProduct onClose={handleModal} id={id} />
+          <ModalProduct onClose={handleClose} id={selected} ref={ref} />
         </Modal>
       </>
     </>

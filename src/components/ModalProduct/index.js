@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Typography, Box, Button } from "@mui/material";
 
-export default function Index({ onClose }) {
+export default function Index({ onClose, id }) {
+  console.log(id);
   const [cantidad, setCantidad] = useState(0);
   const handleCantidad = () => {
     const result = cantidad + 1;
@@ -13,6 +14,9 @@ export default function Index({ onClose }) {
     }
     setCantidad(cantidad - 1);
   };
+  const nickName = localStorage.getItem("orden");
+  const newOrden = { mesa: 1, nickName, id, cantidad };
+  console.log(newOrden);
   return (
     <Box
       sx={{

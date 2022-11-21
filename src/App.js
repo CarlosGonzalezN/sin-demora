@@ -1,7 +1,14 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import { Menu, Pedido, Error, Register, Initial } from "./pages/index";
+import {
+  Menu,
+  Pedido,
+  Error,
+  Register,
+  Initial,
+  ModalProducts,
+} from "./pages/index";
 
 function App() {
   return (
@@ -11,6 +18,7 @@ function App() {
       <Route path="/error" element={<Error />} />
       <Route path="/pedido" element={<Pedido />} />
       <Route path="/" element={<Initial />}></Route>
+      <Route path="/modal/:id" element={<ModalProducts />}></Route>
     </Routes>
   );
 }

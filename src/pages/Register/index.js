@@ -10,8 +10,8 @@ export default function Index() {
     setNombre(e.target.value);
   };
   const handleSumbit = (e) => {
-    const orden = { mesa: "01", nombre: nombre };
-    localStorage.setItem("orden", JSON.stringify(orden));
+    const orden = [nombre];
+    localStorage.setItem("orden", orden);
     navigate("/menu");
   };
 

@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { CircularProgress } from "@mui/material/";
 import { getProducts } from "../../Hooks/useGetProducts";
+import { getCategory } from "../../Hooks/useGetCategory";
 import { CardProduct, Category } from "../index";
 import "../../App.css";
 export default function Index() {
   const [products, setProducts] = useState([]);
+  const [category, setCategory] = useState([]);
   const [isLoading, setLoading] = useState(true);
 
   async function loadProduct() {
@@ -17,22 +19,27 @@ export default function Index() {
       setLoading(true);
     }
   }
+  async function loadCategory() {
+    const response = await getCategory();
+    if (response && response.status === 200) {
+      setCategory(response.data);
+    }
+  }
   useEffect(() => {
     loadProduct();
+    loadCategory();
   }, []);
   console.log(isLoading);
   return (
     <div className="container">
-      <div>
-        {isLoading ? (
-          <CircularProgress sx={{ display: "flex", marginTop: 3 }} />
-        ) : (
-          <>
-            <Category />
-            <CardProduct products={products} />
-          </>
-        )}
-      </div>
+      {isLoading ? (
+        <CircularProgress sx={{ display: "flex", marginTop: 3 }} />
+      ) : (
+        <>
+          <Category category={category} />
+          <CardProduct products={products} />
+        </>
+      )}
     </div>
   );
 }
