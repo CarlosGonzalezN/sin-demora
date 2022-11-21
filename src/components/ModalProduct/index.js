@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Typography, Box, Button } from "@mui/material";
+import { generateOrden } from "../../Hooks/usePostOrdern";
 
 export default function Index({ onClose, id }) {
   console.log(id);
@@ -15,8 +16,16 @@ export default function Index({ onClose, id }) {
     setCantidad(cantidad - 1);
   };
   const nickName = localStorage.getItem("orden");
-  const newOrden = { mesa: 1, nickName, id, cantidad };
-  console.log(newOrden);
+  const newOrden = { iMesa: 1, nickName, idProducto: id, cantidad };
+  const pedir = () => {
+    if (cantidad > 0) {
+      const response = generateOrden(newOrden);
+
+      onClose(true);
+    }
+    onClose(true);
+  };
+
   return (
     <Box
       sx={{
@@ -42,7 +51,7 @@ export default function Index({ onClose, id }) {
       <Button variant="outlined" color="error" size="small" onClick={onClose}>
         Cancelar
       </Button>
-      <Button variant="contained" sx={{ marginLeft: 3 }}>
+      <Button variant="contained" sx={{ marginLeft: 3 }} onClick={pedir}>
         Pedir
       </Button>
     </Box>
