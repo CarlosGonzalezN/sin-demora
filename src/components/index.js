@@ -3,3 +3,4 @@ export { default as Category } from "./category/index";
 export { default as CardProduct } from "./cardProduct/index";
 export { default as Products } from "./products/index";
 export { default as ModalProduct } from "./modalProduct/index";
+export { default as Orden } from "./orden/index";

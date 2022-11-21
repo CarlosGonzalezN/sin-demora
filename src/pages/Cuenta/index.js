@@ -1,8 +1,10 @@
 import React from "react";
+import { Nav, Orden } from "../../components";
 export default function Index() {
   return (
     <>
-      <h1>Cuenta</h1>
+      <Nav />
+      <Orden />
     </>
   );
 }
