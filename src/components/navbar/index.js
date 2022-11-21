@@ -20,7 +20,7 @@ export default function Index() {
   const [anchorElNav, setAnchorElNav] = useState();
   const [anchorElUser, setAnchorElUser] = useState();
 
-  const pages = ["registrese", "menu", "pedido"];
+  const pages = ["registrese", "menu", "cierre", "cuenta"];
   const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
   const handleOpenNavMenu = (e) => {

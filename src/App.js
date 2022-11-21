@@ -7,7 +7,8 @@ import {
   Error,
   Register,
   Initial,
-  ModalProducts,
+  Cierre,
+  Cuenta,
 } from "./pages/index";
 
 function App() {
@@ -18,7 +19,8 @@ function App() {
       <Route path="/error" element={<Error />} />
       <Route path="/pedido" element={<Pedido />} />
       <Route path="/" element={<Initial />}></Route>
-      <Route path="/modal/:id" element={<ModalProducts />}></Route>
+      <Route path="/cierre" element={<Cierre />}></Route>
+      <Route path="/cuenta" element={<Cuenta />}></Route>
     </Routes>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Typography, Box, Button } from "@mui/material";
 import { generateOrden } from "../../Hooks/usePostOrdern";
 
@@ -19,7 +19,7 @@ export default function Index({ onClose, id }) {
   const newOrden = { iMesa: 1, nickName, idProducto: id, cantidad };
   const pedir = () => {
     if (cantidad > 0) {
-      const response = generateOrden(newOrden);
+      generateOrden(newOrden);
 
       onClose(true);
     }
