@@ -10,7 +10,7 @@ import {
   Modal,
 } from "@mui/material";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import { ModalProduct } from "../index";
+import ModalProduct from "../modalProduct/index";
 
 export default function Index({ products }) {
   const ref = useRef();

@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import { CircularProgress } from "@mui/material/";
 import { getProducts } from "../../Hooks/useGetProducts";
 import { getCategory } from "../../Hooks/useGetCategory";
-import { CardProduct, Category } from "../index";
+import CardProduct from "../cardProduct/index";
+import Category from "../category/index";
 import "../../App.css";
-export default function Index() {
+export function Products() {
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState([]);
   const [isLoading, setLoading] = useState(true);

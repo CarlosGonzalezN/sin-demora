@@ -1,16 +1,14 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import {
-  Menu,
-  Pedido,
-  Error,
-  Register,
-  Initial,
-  Cierre,
-  Cuenta,
-  Pago,
-} from "./pages/index";
+import Menu from "./pages/Menu/index";
+import Pedido from "./pages/Pedido/index";
+import Error from "./pages/Error/index";
+import Register from "./pages/Register/index";
+import Initial from "./pages/Initial/index";
+import Cierre from "./pages/Cierre/index";
+import Cuenta from "./pages/Cuenta";
+import Pago from "./pages/Pago/index";
 
 function App() {
   return (
