@@ -3,7 +3,7 @@ export async function generateOrden(data) {
   try {
     const response = await Axios.get("http://localhost:44328/Pedidos/Alta", {
       params: {
-        IdMesa: data.id,
+        IdMesa: data.idMesa,
         nickName: data.nickName,
         IdProducto: data.idProducto,
         cantidad: data.cantidad,
