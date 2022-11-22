@@ -3,7 +3,7 @@ export async function generateOrden(data) {
   try {
     const response = await Axios({
       method: "POST",
-      url: "http://localhost:3005/Pedidos/AltaPedido",
+      url: "https://localhost:44328/Pedidos/AltaPedido",
       data: data,
     });
     return response;
