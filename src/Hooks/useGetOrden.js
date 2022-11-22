@@ -5,8 +5,9 @@ export async function getAllOrden() {
     const response = await Axios({
       headers: { "Content-Type": "application/json" },
       method: "GET",
-      url: "https://localhost:44328/pedidos",
+      url: "http://localhost:3005/pedidos",
     });
+    console.log(response);
     return response;
   } catch (e) {
     console.log(e);

@@ -5,7 +5,7 @@ export async function getProducts() {
     const response = await Axios({
       headers: { "Content-Type": "application/json" },
       method: "GET",
-      url: "https://localhost:44328/productos",
+      url: "http://localhost:3005/productos",
     });
     console.log(response);
     return response;
