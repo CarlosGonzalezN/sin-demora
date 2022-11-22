@@ -9,6 +9,7 @@ import {
   Initial,
   Cierre,
   Cuenta,
+  Pago,
 } from "./pages/index";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <Route path="/" element={<Initial />}></Route>
       <Route path="/cierre" element={<Cierre />}></Route>
       <Route path="/cuenta" element={<Cuenta />}></Route>
+      <Route path="/pago/" element={<Pago />}></Route>
     </Routes>
   );
 }

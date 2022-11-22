@@ -2,15 +2,20 @@ import { Box, Button, Card, CardContent, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { getAllOrden } from "../../Hooks/useGetOrden";
 import "../../App.css";
+import { useNavigate } from "react-router-dom";
 export default function Index() {
   const [pedidos, setPedido] = useState([]);
-
+  const navigate = useNavigate();
   const name = localStorage.getItem("orden");
   /* const newOrden = { iMesa: 1, nickName }; */
   async function loadOrdens() {
     const pedido = await getAllOrden();
     setPedido(pedido.data.listaPedidos);
   }
+  const handlePay = (total) => {
+    localStorage.setItem("cuenta", total);
+    navigate("/pago/");
+  };
   useEffect(() => {
     loadOrdens();
   }, []);
@@ -42,7 +47,7 @@ export default function Index() {
               {name.toLowerCase() == NickName.toLowerCase() ? (
                 <Button
                   onClick={() => {
-                    alert("pagado");
+                    handlePay(precioTotalCliente);
                   }}
                 >
                   Pagar mi cuenta
