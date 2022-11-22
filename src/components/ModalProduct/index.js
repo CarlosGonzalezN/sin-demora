@@ -16,7 +16,7 @@ export default function Index({ onClose, id }) {
     setCantidad(cantidad - 1);
   };
   const nickName = localStorage.getItem("orden");
-  const newOrden = { iMesa: 1, nickName, idProducto: id, cantidad };
+  const newOrden = { idMesa: 1, nickName, idProducto: id, cantidad };
   const pedir = () => {
     if (cantidad > 0) {
       generateOrden(newOrden);
