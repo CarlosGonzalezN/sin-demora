@@ -5,7 +5,7 @@ export async function getCategory() {
     const response = await Axios({
       headers: { "Content-Type": "application/json" },
       method: "GET",
-      url: "http://localhost:3005/categoria",
+      url: "http://localhost:44328/Inicio/obtenerCategorias",
     });
     console.log(response);
     return response;
