@@ -53,7 +53,7 @@ export default function Index() {
                         </lu>
                       </>
                     ))}
-                    <Typography>{precioTotalCliente}</Typography>
+                    <Typography>${precioTotalCliente}</Typography>
                   </CardContent>
 
                   {name.toLowerCase() === NickName.toLowerCase() ? (
