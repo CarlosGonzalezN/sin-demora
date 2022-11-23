@@ -9,6 +9,7 @@ import Initial from "./pages/Initial/index";
 import Cierre from "./pages/Cierre/index";
 import Cuenta from "./pages/Cuenta";
 import Pago from "./pages/Pago/index";
+import Gracias from "./pages/Gracias";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Route path="/cierre" element={<Cierre />}></Route>
       <Route path="/cuenta" element={<Cuenta />}></Route>
       <Route path="/pago/" element={<Pago />}></Route>
+      <Route path="/gracias" element={<Gracias />}></Route>
     </Routes>
   );
 }

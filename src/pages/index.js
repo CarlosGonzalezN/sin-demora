@@ -6,3 +6,4 @@ export { default as Initial } from "./Initial/index";
 export { default as Cuenta } from "./Cuenta/index";
 export { default as Cierre } from "./Cierre/index";
 export { default as Pago } from "./Pago";
+export { default as Gracias } from "./Gracias";

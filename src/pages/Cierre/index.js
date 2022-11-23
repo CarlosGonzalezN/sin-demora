@@ -3,11 +3,13 @@ import { Button, Typography, Stack, Alert } from "@mui/material";
 import "../../App.css";
 import { getAllOrden } from "../../Hooks/useGetOrden";
 import { payCuentaMesa } from "../../Hooks/usePostPay";
+import { useNavigate } from "react-router-dom";
 
 export default function Index() {
   const [visible1, setVisible1] = useState(false);
   const [visible2, setVisible2] = useState(false);
   const [cuentaTotal, setcuentaTotal] = useState();
+  const navigate = useNavigate();
   const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
   async function loadOrdens() {
     const pedido = await getAllOrden(2);
@@ -26,11 +28,13 @@ export default function Index() {
     await delay(9000);
     payCuentaMesa(2);
     console.log("after");
+    navigate("/gracias");
   };
   const handleCardVisible2 = () => {
     setVisible2(true);
     setVisible1(false);
     payCuentaMesa(2);
+    navigate("/gracias");
   };
   return (
     <>

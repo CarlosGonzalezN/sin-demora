@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Typography, Stack, Alert } from "@mui/material";
 import "../../App.css";
 import { payCuenta } from "../../Hooks/usePostPay";
+import { useNavigate } from "react-router-dom";
 
 export default function Index() {
   const [visible1, setVisible1] = useState(false);
@@ -9,15 +10,25 @@ export default function Index() {
   const cuenta = localStorage.getItem("cuenta");
   const idMesa = 2;
   const nickName = localStorage.getItem("orden");
-  const handleCardVisible1 = () => {
+  const navigate = useNavigate();
+  const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+  const handleCardVisible1 = async () => {
     setVisible1(true);
     setVisible2(false);
     payCuenta(idMesa, nickName);
+    console.log("before");
+    await delay(9000);
+    console.log("after");
+    navigate("/gracias");
   };
-  const handleCardVisible2 = () => {
+  const handleCardVisible2 = async () => {
     setVisible2(true);
     setVisible1(false);
     payCuenta(idMesa, nickName);
+    console.log("before");
+    await delay(9000);
+    console.log("after");
+    navigate("/gracias");
   };
   return (
     <>
