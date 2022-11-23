@@ -9,9 +9,10 @@ export default function Index() {
   const [isLoading, setLoading] = useState(true);
   const navigate = useNavigate();
   const name = localStorage.getItem("orden");
+  const idMesa = 2;
 
   async function loadOrdens() {
-    const pedido = await getAllOrden();
+    const pedido = await getAllOrden(idMesa);
     if (pedido && pedido.status === 200) {
       setPedido(pedido.data.listaPedidos);
       setLoading(false);
