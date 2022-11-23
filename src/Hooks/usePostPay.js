@@ -1,12 +1,12 @@
 import Axios from "axios";
-export async function payCuenta(data) {
+export async function payCuenta(idMesa, nickName) {
   try {
     const response = await Axios.get(
       "http://localhost:44328/Pedidos/PagarPedido",
       {
         params: {
-          IdMesa: data.idMesa,
-          nickName: data.nickName,
+          IdMesa: idMesa,
+          nickName: nickName,
         },
       }
     );
