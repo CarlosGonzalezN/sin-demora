@@ -8,6 +8,7 @@ export default function Index() {
   const [visible1, setVisible1] = useState(false);
   const [visible2, setVisible2] = useState(false);
   const [cuentaTotal, setcuentaTotal] = useState();
+  const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
   async function loadOrdens() {
     const pedido = await getAllOrden(2);
     if (pedido && pedido.status === 200) {
@@ -18,10 +19,13 @@ export default function Index() {
     loadOrdens();
   }, []);
   console.log(cuentaTotal);
-  const handleCardVisible1 = () => {
+  const handleCardVisible1 = async () => {
     setVisible1(true);
     setVisible2(false);
+    console.log("before");
+    await delay(9000);
     payCuentaMesa(2);
+    console.log("after");
   };
   const handleCardVisible2 = () => {
     setVisible2(true);
