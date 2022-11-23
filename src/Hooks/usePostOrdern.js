@@ -1,7 +1,7 @@
 import Axios from "axios";
 export async function generateOrden(data) {
   try {
-    const response = await Axios.get("http://localhost:44328/Pedidos/Alta", {
+    const response = await Axios.get("https://localhost:44328/Pedidos/Alta", {
       params: {
         IdMesa: data.idMesa,
         nickName: data.nickName,

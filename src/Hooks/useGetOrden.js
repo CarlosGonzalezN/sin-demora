@@ -3,7 +3,7 @@ import Axios from "axios";
 export async function getAllOrden(idMesa) {
   try {
     const response = await Axios.get(
-      "http://localhost:44328/Pedidos/DetallePedido",
+      "https://localhost:44328/Pedidos/DetallePedido",
       {
         params: {
           IdMesa: idMesa,
