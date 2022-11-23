@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Box, Button, Card, Typography, Stack, Alert } from "@mui/material";
+import { Button, Typography, Stack, Alert } from "@mui/material";
 import "../../App.css";
 
 export default function Index() {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState();
   const cuenta = localStorage.getItem("cuenta");
 
   const handleCardVisible = () => {

@@ -10,7 +10,6 @@ export async function getAllOrden(idMesa) {
         },
       }
     );
-    console.log(response);
     return response;
   } catch (error) {}
 }

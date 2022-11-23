@@ -56,7 +56,7 @@ export default function Index() {
                     <Typography>{precioTotalCliente}</Typography>
                   </CardContent>
 
-                  {name.toLowerCase() == NickName.toLowerCase() ? (
+                  {name.toLowerCase() === NickName.toLowerCase() ? (
                     <Button
                       onClick={() => {
                         handlePay(precioTotalCliente);
