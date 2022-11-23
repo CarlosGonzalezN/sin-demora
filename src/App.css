@@ -70,3 +70,10 @@
   transition: color 0.15s ease, border-color 0.15s ease;
   max-width: 300px;
 }
+.register {
+  margin: 6rem;
+  margin-top: 8rem;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
